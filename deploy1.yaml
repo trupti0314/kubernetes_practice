@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hi
+  template:
+    metadata:
+      labels:
+        app: hi
+    spec:
+      containers:
+      - name: my-container
+        image: nginx
+        ports:
+         - containerPort: 80
+        command: [ "bash", "-c", "echo 'Hello, World iam trupti kulkarni' && sleep 3600" ]
