@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-deployment
+  name: hi-world
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello-world
+      app: hi-world
   template:
     metadata:
       labels:
-        app: hello-world
+        app: hi-world
     spec:
       containers:
-      - name: ubuntu-container
-        image: ubuntu
+      - name:my-container    
+        image: nginx:latest
         command: [ "bash", "-c", "echo 'Hello, World iam trupti k' && sleep 3600" ]
