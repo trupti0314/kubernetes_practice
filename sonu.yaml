@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trup
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trup
+  template:
+    metadata:
+      labels:
+        app: trup
+    spec:
+      containers:
+        - name: my-container
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
+          command: [ "bash", "-c", "echo '<html><body><h1>Hello, my name is trupti</h1></body></html>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'" ]
