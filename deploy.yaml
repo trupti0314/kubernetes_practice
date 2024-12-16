@@ -15,4 +15,6 @@ spec:
       containers:
       - name: my-container
         image: nginx
+        ports:
+         - containerPort: 80
         command: [ "bash", "-c", "echo 'Hello, World iam trupti k' && sleep 3600" ]
