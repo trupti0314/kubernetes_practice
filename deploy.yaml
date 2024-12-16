@@ -13,6 +13,6 @@ spec:
         app: hi-world
     spec:
       containers:
-      - name:my-container    
+      - name: my-container
         image: nginx
         command: [ "bash", "-c", "echo 'Hello, World iam trupti k' && sleep 3600" ]
